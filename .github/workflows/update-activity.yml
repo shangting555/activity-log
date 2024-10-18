@@ -29,19 +29,39 @@ jobs:
       - name: Commit
         run: |
           git config --global user.name 'shangting555'
-          git config --global user.email '142639231+raymundlin@users.noreply.github.com'
+          git config --global user.email 'azxc9635@gmail.com'
           git commit -am "dist build"
           git push
 
-  release:
+  test:
     runs-on: ubuntu-latest
     needs: build
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test index.js
+        env:
+          INPUT_GITHUB_USERNAME: "shangting555"
+          INPUT_GITHUB_TOKEN: ${{ secrets.ACTIONSECRET2024 }}
+          INPUT_TARGET_REPOS: '[shangting555/activity-log]'
+          INPUT_OUTPUT_STYLE: MARKDOWN
+          INPUT_IGNORE_EVENTS: '[]'
+          INPUT_README_PATH: README.md
+          INPUT_COMMIT_MESSAGE: Update README.md
+          INPUT_EVENT_LIMIT: '100'
+        run: node ./dist/index.js
+
+  release:
+    runs-on: ubuntu-latest
+    needs: test
     steps:
       - uses: actions/checkout@v4
       - name: Pull latest
         run: |
           git config --global user.name 'shangting555'
-          git config --global user.email 'cardflash76@gmail.com'
+          git config --global user.email 'azxc9635@gmail.com'
           git pull
       - name: Tag it
         run: |
