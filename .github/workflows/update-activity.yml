@@ -7,7 +7,6 @@ on:
         description: 'Tag name'     
         required: true
       note:
- 
       description: 'Release note'
         
 jobs:
