@@ -92,7 +92,6 @@ async function fetchAllEvents() {
 
     return allEvents;
 }
-//
 // Function to fetch and filter events
 async function fetchAndFilterEvents() {
     const { starredRepoNames } = await fetchAllStarredRepos();
