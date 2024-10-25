@@ -46,4 +46,3 @@ module.exports = {
     readmePath: core.getInput('README_PATH'),
     commitMessage: core.getInput('COMMIT_MESSAGE')
 };
-//
