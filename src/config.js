@@ -7,7 +7,7 @@ function processIgnoreEvents(value) {
         .map(event => event.trim())
         .filter(Boolean); // Remove any empty values
 }
-
+//
 function processEventLimit(value) {
     const limit = parseInt(value, 10);
     if (isNaN(limit)) {
