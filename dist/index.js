@@ -29919,7 +29919,7 @@ function processIgnoreEvents(value) {
         .map(event => event.trim())
         .filter(Boolean); // Remove any empty values
 }
-
+//
 function processEventLimit(value) {
     const limit = parseInt(value, 10);
     if (isNaN(limit)) {
@@ -30442,7 +30442,6 @@ async function fetchAllEvents() {
 
     return allEvents;
 }
-
 // Function to fetch and filter events
 async function fetchAndFilterEvents() {
     const { starredRepoNames } = await fetchAllStarredRepos();
