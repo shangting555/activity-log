@@ -14,6 +14,6 @@ async function main() {
         process.exit(1);
     }
 }
-
+//
 // Execute the main function
 main();
